@@ -1,0 +1,46 @@
+def hitung_panjang_gelombang(V, f):
+    """Menghitung panjang gelombang"""
+    λ = V / f
+    return λ 
+
+def hitung_kecepatan_gelombang(λ, f):
+    """Menghitung kecepatan gelombang"""
+    V = λ * f
+    return V
+
+def hitung_frekuensi_gelombang(V, λ):
+    """Menghitung frekuensi gelombang"""
+    f = V / λ 
+    return f
+
+def menu():
+    print("Program menghitung gelombang:")
+    print("1. Hitung panjang gelombang (λ = V / f)")
+    print("2. Hitung kecepatan gelombang (V = λ * f)")
+    print("3. Hitung frekuensi gelombang (f = V / λ)")
+
+    pilihan = input("Masukkan pilihan (1/2/3): ")
+
+    if pilihan == '1':
+        V = float(input("Masukkan kecepatan gelombang dalam m/s: "))
+        f = float(input("Masukkan frekuensi gelombang dalam Hz: "))
+        λ = hitung_panjang_gelombang(V, f)
+        print(f"Panjang gelombang: {λ} m")
+
+    elif pilihan == '2':
+        λ = float(input("Masukkan panjang gelombang dalam m: "))
+        f = float(input("Masukkan frekuensi gelombang dalam Hz: "))
+        V = hitung_kecepatan_gelombang(λ, f)
+        print(f"Kecepatan gelombang: {V} m/s")
+
+    elif pilihan == '3':
+        V = float(input("Masukkan kecepatan gelombang dalam m/s: "))
+        λ = float(input("Masukkan panjang gelombang dalam m: "))
+        f = hitung_frekuensi_gelombang(V, λ)
+        print(f"Frekuensi gelombang: {f} Hz")
+
+    else:
+        print("Pilihan tidak sesuai, silahkan pilih 1/2/3")
+
+if __name__ == "__main__":
+    menu()
